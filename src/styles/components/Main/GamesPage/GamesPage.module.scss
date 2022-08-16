@@ -1,0 +1,50 @@
+.gamesPageWrapper {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+
+  .gamesCardWrapper {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 30px;
+
+    .gamesCard {
+      cursor: pointer;
+      padding: 10px 10px 10px 10px;
+      background: var(--body-background-user-default);
+      box-shadow: 0 2px 8px var(--icon-shadow-color-default);
+      border-radius: 20px;
+      transition: .5s ease-in-out;
+
+      img {
+        border-radius: 10px;
+        max-height: 250px;
+        width: 200px;
+      }
+
+      h2 {
+        font-family: Oxanium, 'sans-serif';
+        max-width: 200px;
+        font-size: 18px;
+        font-weight: 400;
+        text-align: center;
+        line-height: 18px;
+        padding-top: 10px;
+      }
+
+      p {
+        font-family: Rubik, 'sans-serif';
+        text-align: center;
+        margin-top: 10px;
+        font-size: 14px;
+
+      }
+    }
+
+    .gamesCard:hover {
+      transform: scale(1.1);
+    }
+  }
+}

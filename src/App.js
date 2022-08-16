@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import 'styles/config/_resets.scss'
+import 'styles/config/root.scss'
+import 'styles/other.scss'
+import Main from "./components/semantic/Main";
+import Navigation from "./components/semantic/Navigation";
+import UserPanel from "./components/Panels/UserPanel";
+import {useDispatch} from "react-redux";
+import {setGameList} from "./redux/UserPanelSlice/UserSlice";
+import {array} from 'imports/arrayImports'
+
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    const list = array
+
+    const dispatch = useDispatch();
+    React.useEffect(()=> {
+        dispatch(setGameList(list))
+    }, [])
+
+    return (
+        <div className='globalWrapper'>
+            <Navigation/>
+            <Main/>
+            <UserPanel/>
+        </div>
+    );
 }
 
 export default App;

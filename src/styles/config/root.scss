@@ -1,0 +1,53 @@
+$dark-background: #191B1F;
+$light-background: rgba(250, 250, 250, 1);
+
+
+$dark-background-user: #191B1F;
+$light-background-user: #FFFFFF;
+
+$light-text: #261D56;
+$dark-text: rgba(255, 255, 255, 1);
+
+$dark-panel-background: #20232B;
+$light-panel-background: #FAFAFA;
+
+
+$dark-icon: #20232B;
+$light-icon: #FFFFFF;
+
+$light-icon-vector: #000;
+$dark-icon-vector: #FFFFFF;
+
+$light-icon-shadow: rgba(183, 183, 183, 0.4);
+$dark-icon-shadow: transparent;
+
+:root {
+  --body-background-dark: #{$dark-background};
+  --body-background-light: #{$light-background};
+  --body-background-default: var(#{--body-background-dark});
+
+  --body-background-user-dark: #{$dark-background-user};
+  --body-background-user-light: #{$light-background-user};
+  --body-background-user-default: var(#{--body-background-user-dark});
+
+  --text-dark: #{$dark-text};
+  --text-light: #{$light-text};
+  --text-default: var(#{--text-dark});
+
+  --panel-background-dark: #{$dark-panel-background};
+  --panel-background-light: #{$light-panel-background};
+  --panel-background-default: var(#{--panel-background-dark});
+
+  --icon-color-dark: #{$dark-icon};
+  --icon-color-light: #{$light-icon};
+  --icon-color-default: var(#{--icon-color-dark});
+
+
+  --icon-vector-color-dark: #{$dark-icon-vector};
+  --icon-vector-color-light: #{$light-icon-vector};
+  --icon-vector-color-default: var(#{--icon-vector-color-dark});
+
+  --icon-shadow-color-dark: #{$dark-icon-shadow};
+  --icon-shadow-color-light: #{$light-icon-shadow};
+  --icon-shadow-color-default: var(#{--icon-shadow-color-dark})
+}

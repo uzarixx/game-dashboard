@@ -1,0 +1,59 @@
+.mostPopularGame {
+  margin-top: 15px;
+
+  h2 {
+    padding-bottom: 25px;
+  }
+
+  .gamesWrapper {
+    display: flex;
+
+    @media (max-width: 1600px) {
+      overflow-y: hidden;
+      overflow-x: scroll;
+      border-radius: 20px;
+    }
+
+    .gamesCards {
+      padding: 0 20px 20px 0;
+      width: 200px;
+      height: 250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      cursor: pointer;
+      border-radius: 20px;
+      margin-right: 20px;
+      @media (max-width: 1600px) {
+        min-width: 200px;
+      }
+
+      p {
+        font-family: Oxanium, 'sans-serif';
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 32px;
+        margin-bottom: 15px;
+        color: white;
+        padding-left: 20px;
+      }
+
+      span {
+        font-family: Oxanium, 'sans-serif';
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 15px;
+        color: white;
+        padding-left: 20px;
+        svg {
+          margin-right: 4.5px;
+        }
+      }
+    }
+
+    .gamesCards:last-child {
+      margin-right: 0;
+    }
+
+  }
+}

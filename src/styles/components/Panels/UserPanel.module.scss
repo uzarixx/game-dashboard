@@ -1,0 +1,209 @@
+.wrapperPanel {
+  z-index: 999;
+  position: absolute;
+
+  min-height: 100%;
+  width: 326px;
+  right: 0;
+  top: 0;
+  background: var(--body-background-user-default);
+  border-radius: 40px 0 0 40px;
+  padding: 40px 13px 10px 13px;
+  transform: translateX(100%);
+  transition: .7s;
+  box-shadow: 0 2px 8px var(--icon-shadow-color-default);
+
+
+}
+
+.wrapperPanelActive {
+  transform: translateX(0);
+  transition: .9s;
+}
+
+.panelHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .userInfo {
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 40px;
+      height: 40px;
+      margin-right: 14.2px;
+    }
+
+    p {
+      font-size: 15px;
+      line-height: 22px;
+    }
+  }
+}
+
+.notificationBlock {
+  position: relative;
+
+  .notificationBlockStatus {
+    position: absolute;
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: red;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+  }
+
+  svg {
+    cursor: pointer;
+
+    path {
+      stroke: var(--text-default);
+    }
+  }
+}
+
+.notificationPanel {
+  position: absolute;
+  background: rgba(110, 110, 110, 0.3);
+  height: 200px;
+  width: 300px;
+  left: -275px;
+  top: 30px;
+  border-radius: 40px;
+  visibility: hidden;
+  opacity: 0;
+  transition: .3s;
+  padding: 20px;
+  .notificationMessage {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+.notificationPanelActive {
+  visibility: visible;
+  opacity: 1;
+
+}
+
+.panelLiveGame {
+  margin-top: 32px;
+
+  p {
+    font-size: 24px;
+    line-height: 22px;
+    padding-bottom: 21px;
+  }
+
+  .LiveGameCard:last-child {
+    margin-bottom: 0;
+  }
+
+  .LiveGameCard {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    cursor: pointer;
+
+    img {
+      width: 71px;
+      height: 62px;
+      margin-right: 10px;
+    }
+
+    .gameInfo {
+      p {
+        font-size: 15px;
+        line-height: 17.78px;
+        padding-bottom: 6px;
+      }
+
+      p:last-child {
+        font-size: 12px;
+        line-height: 10px;
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+
+.gameBlockInfo {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.swiperPanel {
+  padding: 0;
+  min-height: 400px;
+
+  img {
+    max-width: 302px;
+    min-height: 218px;
+    max-height: 218px;
+    border-radius: 12px;
+  }
+
+  .gameBlockInfo {
+    h2 {
+      font-size: 28px;
+      line-height: 22px;
+      padding-bottom: 6px;
+    }
+
+    p {
+      font-family: Poppins, 'sans-serif';
+      font-size: 18px;
+      line-height: 25px;
+      color: var(--text-default);
+    }
+  }
+
+  .rating {
+    padding-top: 5px;
+    font-family: Poppins, 'sans-serif';
+    display: flex;
+    align-items: center;
+
+    p {
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 14.32px;
+      margin-right: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 2px;
+      color: var(--text-default);
+    }
+  }
+
+  .description {
+    font-size: 14px;
+
+    p {
+      font-family: Poppins, 'sans-serif';
+      color: var(--text-default);
+
+      font-size: 12px;
+      line-height: 20px;
+      padding-top: 12px;
+      font-weight: 400;
+    }
+  }
+
+  button {
+    padding: 15px 78px;
+    max-width: 286px;
+    margin-top: 10px;
+    border-radius: 8px;
+    box-shadow: none;
+  }
+}

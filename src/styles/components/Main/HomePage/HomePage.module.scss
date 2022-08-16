@@ -1,0 +1,27 @@
+
+.mainHead {
+  ul {
+    display: flex;
+    justify-content: space-between;
+    max-width: 535px;
+    @media (max-width: 600px) {
+      overflow-y: auto;
+      max-width: 900px;
+      padding: 10px 0;
+    justify-content: unset;
+    }
+    li {
+      font-size: 17px;
+      @media (max-width: 600px) {
+        margin-right: 10px;
+        min-width: 90px;
+      }
+    }
+    li:first-child {
+      @media (max-width: 600px) {
+        min-width: 50px;
+      }
+    }
+  }
+}
+
