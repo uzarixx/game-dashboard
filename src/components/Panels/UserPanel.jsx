@@ -1,9 +1,10 @@
 import React, {useCallback} from "react";
 import styles from 'styles/components/Panels/UserPanel.module.scss'
 import {useSelector} from "react-redux";
-import {selectUserPanel} from "redux/UserPanelSlice/UserSlice";
+import {selectUserAuth, selectUserPanel} from "redux/UserPanelSlice/UserSlice";
 import UserImg from 'assets/png/user-img.png'
 import {ReactComponent as Notification} from "assets/svg/bell.svg";
+import {ReactComponent as User} from "assets/svg/user.svg";
 import IcoOne from 'assets/png/gameMiniIcon.png'
 import IcoTwo from 'assets/png/gameMiniIconTwo.png'
 import IcoThree from 'assets/png/gameMiniIconThree.png'
@@ -21,6 +22,7 @@ const notification = [{info: 'Hello, you are registration, good luck :)'}]
 
 function UserPanel() {
     const panel = useSelector(selectUserPanel)
+    const isAuth = useSelector(selectUserAuth)
     const [notificationPanel, setNotificationPanel] = React.useState(false)
     const [notificationStatus, setNotificationStatus] = React.useState(false)
     const onClickNotification = useCallback(() => {
@@ -34,7 +36,6 @@ function UserPanel() {
     }
 
 
-
     React.useEffect(() => {
         if (notification.length >= 1) {
             setNotificationStatus(true)
@@ -42,33 +43,37 @@ function UserPanel() {
     }, [])
 
 
-
     return (
         <div className={`${styles.wrapperPanel}${panel ? ' ' + styles.wrapperPanelActive : ''}`}
              onClick={onClickBodyPanel}
              style={notificationPanel ? {cursor: "pointer"} : {cursor: "default"}}>
-            <div className={styles.panelHead}>
-                <div className={styles.userInfo}>
-                    <img src={UserImg} alt="user-ico"/>
-                    <p>William Jonson</p>
-                </div>
-                <div className={styles.notificationBlock}>
-                    <span className={notificationStatus ? styles.notificationBlockStatus : ''}></span>
-                    <Notification onClick={onClickNotification}/>
-                    <div
-                        className={`${styles.notificationPanel}${notificationPanel ? ' ' + styles.notificationPanelActive : ''}`}
-                        onClick={(e) => e.stopPropagation()}>
-                        {
-                            notification.map((el,i) =>
-                                <div className={styles.notificationMessage} key={i}>
-                                    {el.info}
-                                </div>
-                            )
-                        }
 
+            {
+                isAuth ? <div className={styles.panelHead}>
+                    <div className={styles.userInfo}>
+                        <img src={UserImg} alt="user-ico"/>
+                        <p>William Jonson</p>
                     </div>
-                </div>
-            </div>
+                    <div className={styles.notificationBlock}>
+                        <span className={notificationStatus ? styles.notificationBlockStatus : ''}></span>
+                        <Notification onClick={onClickNotification}/>
+                        <div
+                            className={`${styles.notificationPanel}${notificationPanel ? ' ' + styles.notificationPanelActive : ''}`}
+                            onClick={(e) => e.stopPropagation()}>
+                            {
+                                notification.map((el, i) =>
+                                    <div className={styles.notificationMessage} key={i}>
+                                        {el.info}
+                                    </div>
+                                )
+                            }
+
+                        </div>
+                    </div>
+                </div> : <button className={styles.notAuthButton}>Login <User/></button>
+            }
+
+
             <div className={styles.panelLiveGame}>
                 <p>Live Game</p>
                 {

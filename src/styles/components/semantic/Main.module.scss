@@ -4,6 +4,7 @@ main {
   background: var(--panel-background-default);
   padding: 50px 30px 39px 30px;
   overflow: hidden;
+  box-shadow: 0 2px 8px var(--icon-shadow-color-default);
   @media (max-width: 600px) {
     padding: 20px 20px 39px 20px;
   }

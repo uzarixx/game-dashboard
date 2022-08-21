@@ -6,24 +6,26 @@ import {ReactComponent as Chat} from "assets/svg/chat.svg";
 import {ReactComponent as Favorites} from "assets/svg/favorite.svg";
 import {ReactComponent as Settings} from "assets/svg/setting.svg";
 import {ReactComponent as Exit} from "assets/svg/exit.svg";
+import {ReactComponent as User} from "assets/svg/user.svg";
 import {Link, useLocation} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import {selectUserPanel, setPanelOpen} from "redux/UserPanelSlice/UserSlice";
+import {selectUserPanel, selectTheme, setPanelOpen, setTheme, selectUserAuth} from "redux/UserPanelSlice/UserSlice";
 
+const icons = [
+    {icon: <Home/>, to: '/'},
+    {icon: <Game/>, to: '/game'},
+    {icon: <Chat/>, to: '/chat', deleted: true},
+    {icon: <Favorites/>, to: '/favorites', deleted: true},
+    {icon: <Settings/>, to: '/settings', deleted: true},
+
+]
 
 function Navigation() {
-    const [theme, setTheme] = React.useState('dark')
+    const isAuth = useSelector(selectUserAuth)
     const dispatch = useDispatch()
     const panel = useSelector(selectUserPanel)
+    const theme = useSelector(selectTheme)
     const location = useLocation();
-    const icons = [
-        {icon: <Home/>, to: '/'},
-        {icon: <Game/>, to: '/game'},
-        {icon: <Chat/>, to: '/chat'},
-        {icon: <Favorites/>, to: '/favorites'},
-        {icon: <Settings/>, to: '/settings'},
-
-    ]
     const onSetPanel = () => {
         dispatch(setPanelOpen(!panel))
     }
@@ -32,12 +34,6 @@ function Navigation() {
         if (panel === true) {
             dispatch(setPanelOpen(false))
         }
-    }
-
-    const changeTheme = () => {
-        const selectTheme = theme === 'dark' ? 'light' : 'dark';
-        setTheme(selectTheme)
-        window.localStorage.setItem('theme', selectTheme)
     }
 
 
@@ -53,6 +49,8 @@ function Navigation() {
             'icon-color',
             'icon-vector-color',
             'icon-shadow-color',
+            'input',
+            'text-reverse'
         ]
 
         components.forEach(component => {
@@ -61,7 +59,7 @@ function Navigation() {
                 `var(--${component}-${currentTheme})`
             )
         })
-        setTheme(currentTheme)
+        dispatch(setTheme(currentTheme))
     }, [theme])
 
 
@@ -73,20 +71,32 @@ function Navigation() {
                     <span></span>
                     <span className={panel ? styles.buttonActive : ""}></span>
                 </div>
-                <div className={styles.iconsWrapper}>
+                <div className={`${isAuth ? styles.iconsWrapper : styles.iconsWrapperActive}`}>
                     {
                         icons.map((el, i) =>
                             <Link
                                 to={el.to}
                                 key={i}
-                                className={`${styles.icon} ${location.pathname === el.to ? " " + styles.iconActive : ''}`}>
+                                className={`${styles.icon} ${location.pathname === el.to ? " " + styles.iconActive : ''}`}
+                                style={el.deleted && !isAuth ? {display: 'none'} : {display: 'flex'}}
+                            >
                                 {el.icon}
                             </Link>
                         )
                     }
-                    <div className={styles.icon} onClick={changeTheme}>
-                        <Exit/>
+
+
+                    <div className={styles.icon}>
+                        {
+                            isAuth
+                                ?
+                                <Exit/>
+                                :
+                                <User style={{width: '25'}}/>
+                        }
                     </div>
+
+
                 </div>
             </div>
         </nav>

@@ -1,0 +1,24 @@
+.settingsPageWrapper {
+  .themeButton {
+    width: 60px;
+    height: 60px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px var(--icon-shadow-color-default);
+    background: var(--body-background-user-default);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    svg {
+      max-width: 40px;
+    }
+
+    .sunButton {
+
+      fill: white;
+      stroke: white;
+    }
+  }
+}

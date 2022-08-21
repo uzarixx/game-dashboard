@@ -21,7 +21,7 @@ const list = [
         ]
     },
     {
-        delay: 4500,
+        delay: 3500,
         array: [
             {name: 'Guardians Galaxy represents perfection', img: BackFive},
             {name: 'Squid Game comeback, hurry to us', img: BackSix},

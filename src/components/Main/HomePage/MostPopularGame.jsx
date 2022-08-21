@@ -21,7 +21,7 @@ function MostPopularGame() {
             <h2>Most popular Game</h2>
             <div className={styles.gamesWrapper}>
                 {list.map((el, i) =>
-                    <Link to='/game' className={styles.gamesCards}>
+                    <Link to='/game' className={styles.gamesCards} key={i}>
                     <div className={styles.gamesCards} style={{backgroundImage: `url("${el.img}")`}} key={i}>
                         <p>{el.title}</p>
                         <span><Star/>{el.rating}</span>

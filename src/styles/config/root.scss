@@ -8,9 +8,15 @@ $light-background-user: #FFFFFF;
 $light-text: #261D56;
 $dark-text: rgba(255, 255, 255, 1);
 
+$light-text-reverse: rgba(255, 255, 255, 1);
+$dark-text-reverse: #261D56;
+
 $dark-panel-background: #20232B;
 $light-panel-background: #FAFAFA;
 
+
+$dark-input-background: #FAFAFA;
+$light-input-background: #20232B;
 
 $dark-icon: #20232B;
 $light-icon: #FFFFFF;
@@ -34,6 +40,11 @@ $dark-icon-shadow: transparent;
   --text-light: #{$light-text};
   --text-default: var(#{--text-dark});
 
+  --text-reverse-dark: #{$dark-text-reverse};
+  --text-reverse-light: #{$light-text-reverse};
+  --text-reverse-default: var(#{--text-reverse-dark});
+
+
   --panel-background-dark: #{$dark-panel-background};
   --panel-background-light: #{$light-panel-background};
   --panel-background-default: var(#{--panel-background-dark});
@@ -49,5 +60,9 @@ $dark-icon-shadow: transparent;
 
   --icon-shadow-color-dark: #{$dark-icon-shadow};
   --icon-shadow-color-light: #{$light-icon-shadow};
-  --icon-shadow-color-default: var(#{--icon-shadow-color-dark})
+  --icon-shadow-color-default: var(#{--icon-shadow-color-dark});
+
+  --input-dark: #{$dark-input-background};
+  --input-light: #{$light-input-background};
+  --input-default: var(#{--input-dark});
 }

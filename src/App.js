@@ -12,9 +12,7 @@ import {array} from 'imports/arrayImports'
 
 
 function App() {
-
     const list = array
-
     const dispatch = useDispatch();
     React.useEffect(()=> {
         dispatch(setGameList(list))

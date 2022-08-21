@@ -1,5 +1,7 @@
 import {bgFive, bgFour, bgNine, bgOne, bgSix, bgTen, bgThree, bgTwo} from "./imgImports";
 
+
+
 const list = [
     {id: 0, img: bgOne, title: 'Sniper 2', type: 'Battle/war', rating: 9.9},
     {id: 1, img: bgTwo, title: 'Need For Speed', type: 'Racing', rating: 7.2},
