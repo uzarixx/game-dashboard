@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/game-dashboard/static/css/main.942425bc.css",
-    "main.js": "/game-dashboard/static/js/main.9d58d6a5.js",
+    "main.css": "/game-dashboard/static/css/main.995e7768.css",
+    "main.js": "/game-dashboard/static/js/main.3c63cd87.js",
     "static/media/bg-five.png": "/game-dashboard/static/media/bg-five.bf1e74eb5a15f3773f94.png",
     "static/media/bg-four.png": "/game-dashboard/static/media/bg-four.a45c83ea92e9ac4823d4.png",
     "static/media/bg-three.png": "/game-dashboard/static/media/bg-three.3216feb67c3d5fa78f61.png",
@@ -25,18 +25,21 @@
     "static/media/gameMiniIconThree.png": "/game-dashboard/static/media/gameMiniIconThree.81fda995ef012618a723.png",
     "static/media/game.svg": "/game-dashboard/static/media/game.d8d52c1a7ae8cf352213797f4478f2dc.svg",
     "static/media/setting.svg": "/game-dashboard/static/media/setting.f5ad7d021ab99cc93e94db87dc359c5d.svg",
+    "static/media/sun.svg": "/game-dashboard/static/media/sun.0688a90205f2a7ab5d52134b13ef68da.svg",
     "static/media/exit.svg": "/game-dashboard/static/media/exit.461bec00583baf51d8f1a66594ad049d.svg",
     "static/media/chat.svg": "/game-dashboard/static/media/chat.3903a5d6507c5e244d7bc7a3ca6faf1b.svg",
     "static/media/favorite.svg": "/game-dashboard/static/media/favorite.01cb893dac43ac06f103d1e34f717733.svg",
+    "static/media/user.svg": "/game-dashboard/static/media/user.262adfd02a1ea4fd7d3b74af8afbb9c4.svg",
+    "static/media/moon.svg": "/game-dashboard/static/media/moon.66ca1bdb09cfa0ed1b90b60668db12d1.svg",
     "static/media/star.svg": "/game-dashboard/static/media/star.f6d8a387351b613bae245409ad7b6ff1.svg",
     "static/media/home.svg": "/game-dashboard/static/media/home.aece2a09be68b00761f6c7acaf0e50b4.svg",
     "static/media/bell.svg": "/game-dashboard/static/media/bell.0f9d20397d618a7cf189d18bd7801507.svg",
     "index.html": "/game-dashboard/index.html",
-    "main.942425bc.css.map": "/game-dashboard/static/css/main.942425bc.css.map",
-    "main.9d58d6a5.js.map": "/game-dashboard/static/js/main.9d58d6a5.js.map"
+    "main.995e7768.css.map": "/game-dashboard/static/css/main.995e7768.css.map",
+    "main.3c63cd87.js.map": "/game-dashboard/static/js/main.3c63cd87.js.map"
   },
   "entrypoints": [
-    "static/css/main.942425bc.css",
-    "static/js/main.9d58d6a5.js"
+    "static/css/main.995e7768.css",
+    "static/js/main.3c63cd87.js"
   ]
 }
