@@ -1,7 +1,7 @@
 import React, {useCallback} from "react";
 import styles from 'styles/components/Panels/UserPanel.module.scss'
-import {useSelector} from "react-redux";
-import {selectUserAuth, selectUserPanel} from "redux/UserPanelSlice/UserSlice";
+import {useDispatch, useSelector} from "react-redux";
+import {setPanelOpen, selectUserAuth, selectUserPanel, setPopupOpen} from "redux/UserPanelSlice/GlobalSlice";
 import UserImg from 'assets/png/user-img.png'
 import {ReactComponent as Notification} from "assets/svg/bell.svg";
 import {ReactComponent as User} from "assets/svg/user.svg";
@@ -21,6 +21,7 @@ const list = [
 const notification = [{info: 'Hello, you are registration, good luck :)'}]
 
 function UserPanel() {
+    const dispatch = useDispatch()
     const panel = useSelector(selectUserPanel)
     const isAuth = useSelector(selectUserAuth)
     const [notificationPanel, setNotificationPanel] = React.useState(false)
@@ -28,21 +29,21 @@ function UserPanel() {
     const onClickNotification = useCallback(() => {
         setNotificationPanel(!notificationPanel)
     })
-
     const onClickBodyPanel = () => {
         if (notificationPanel) {
             return setNotificationPanel(false)
         }
     }
-
-
+    const onClickLogin = () => {
+        dispatch(setPopupOpen(true))
+        dispatch(setPanelOpen(false))
+    }
     React.useEffect(() => {
         if (notification.length >= 1) {
             setNotificationStatus(true)
         }
     }, [])
-
-
+    const username = localStorage.getItem('username')
     return (
         <div className={`${styles.wrapperPanel}${panel ? ' ' + styles.wrapperPanelActive : ''}`}
              onClick={onClickBodyPanel}
@@ -52,7 +53,7 @@ function UserPanel() {
                 isAuth ? <div className={styles.panelHead}>
                     <div className={styles.userInfo}>
                         <img src={UserImg} alt="user-ico"/>
-                        <p>William Jonson</p>
+                        <p>{username}</p>
                     </div>
                     <div className={styles.notificationBlock}>
                         <span className={notificationStatus ? styles.notificationBlockStatus : ''}></span>
@@ -70,7 +71,7 @@ function UserPanel() {
 
                         </div>
                     </div>
-                </div> : <button className={styles.notAuthButton}>Login <User/></button>
+                </div> : <button className={styles.notAuthButton} onClick={onClickLogin}>Login <User/></button>
             }
 
 

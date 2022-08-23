@@ -12,9 +12,9 @@
     }
   }
 
+
   .gameDetailRight {
     padding-top: 5px;
-
     p {
       font-size: 14px;
       padding-top: 10px;
@@ -29,6 +29,16 @@
 
     h3 {
       margin: 15px 0;
+    }
+
+    h4 {
+      margin-top: 20px;
+      cursor: pointer;
+      font-size: 13px;
+      transition: .3s;
+      &:hover {
+        color: #FC8B40;
+      }
     }
 
     ul {

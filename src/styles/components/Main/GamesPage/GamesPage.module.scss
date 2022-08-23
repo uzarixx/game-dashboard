@@ -7,10 +7,12 @@
   .inputWrapper {
     padding-left: 10px;
     margin-bottom: 20px;
+
     p {
       padding-left: 15px;
       margin-bottom: 5px;
     }
+
     input {
       border-radius: 20px;
       outline: none;
@@ -18,7 +20,7 @@
       padding: 5px 20px 7px 15px;
       background: var(--input-default);
       box-shadow: 0 20px 10px var(--icon-shadow-color-default);
-    color: var(--text-reverse-default);
+      color: var(--text-reverse-default);
       font-size: 20px;
       font-family: Oxanium, sans-serif;
     }
@@ -39,6 +41,7 @@
       box-shadow: 0 2px 8px var(--icon-shadow-color-default);
       border-radius: 20px;
       transition: .5s ease-in-out;
+      position: relative;
 
       img {
         border-radius: 10px;
@@ -63,10 +66,30 @@
         font-size: 14px;
 
       }
+
+      span {
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        top: 5px;
+        right: 5px;
+        transition: .3s;
+
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+
+      }
     }
 
     .gamesCard:hover {
-      transform: scale(1.1);
+      transform: scale(1.05);
+
+      span {
+        opacity: 1;
+        visibility: visible;
+      }
     }
   }
 }

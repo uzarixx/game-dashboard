@@ -3,7 +3,7 @@ import styles from 'styles/components/Main/SettingsPage/SettingsPage.module.scss
 import {ReactComponent as Moon} from "assets/svg/moon.svg";
 import {ReactComponent as Sun} from "assets/svg/sun.svg";
 import {useDispatch, useSelector} from "react-redux";
-import {selectTheme, setTheme} from "redux/UserPanelSlice/UserSlice";
+import {selectTheme, setTheme} from "redux/UserPanelSlice/GlobalSlice";
 
 function SettingsPage() {
     const theme = useSelector(selectTheme)

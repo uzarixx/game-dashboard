@@ -2,8 +2,9 @@ import React from "react";
 import styles from 'styles/components/Main/GamesPage/GamesPage.module.scss'
 import {Link} from "react-router-dom";
 import {useSelector} from "react-redux";
-import {selectGameListMain} from "redux/UserPanelSlice/UserSlice";
+import {selectGameListMain} from "redux/UserPanelSlice/GlobalSlice";
 import debounce from 'lodash.debounce'
+
 
 
 function GamesPage() {
@@ -14,7 +15,7 @@ function GamesPage() {
 
     const updateSearchValue = React.useCallback(
         debounce((value) => {
-           setSearch(value)
+            setSearch(value)
         }, 1500),
         [],
     );
@@ -28,6 +29,8 @@ function GamesPage() {
     React.useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
+
+
 
     return (
         <div className={styles.gamesPageWrapper}>
