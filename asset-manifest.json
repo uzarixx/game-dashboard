@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/game-dashboard/static/css/main.376bec46.css",
-    "main.js": "/game-dashboard/static/js/main.2de3cf27.js",
+    "main.css": "/game-dashboard/static/css/main.8cb3d043.css",
+    "main.js": "/game-dashboard/static/js/main.2d12ae0e.js",
     "static/media/bg-five.png": "/game-dashboard/static/media/bg-five.bf1e74eb5a15f3773f94.png",
     "static/media/bg-four.png": "/game-dashboard/static/media/bg-four.a45c83ea92e9ac4823d4.png",
     "static/media/bg-three.png": "/game-dashboard/static/media/bg-three.3216feb67c3d5fa78f61.png",
@@ -35,11 +35,11 @@
     "static/media/home.svg": "/game-dashboard/static/media/home.aece2a09be68b00761f6c7acaf0e50b4.svg",
     "static/media/bell.svg": "/game-dashboard/static/media/bell.0f9d20397d618a7cf189d18bd7801507.svg",
     "index.html": "/game-dashboard/index.html",
-    "main.376bec46.css.map": "/game-dashboard/static/css/main.376bec46.css.map",
-    "main.2de3cf27.js.map": "/game-dashboard/static/js/main.2de3cf27.js.map"
+    "main.8cb3d043.css.map": "/game-dashboard/static/css/main.8cb3d043.css.map",
+    "main.2d12ae0e.js.map": "/game-dashboard/static/js/main.2d12ae0e.js.map"
   },
   "entrypoints": [
-    "static/css/main.376bec46.css",
-    "static/js/main.2de3cf27.js"
+    "static/css/main.8cb3d043.css",
+    "static/js/main.2d12ae0e.js"
   ]
 }
