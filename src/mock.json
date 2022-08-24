@@ -6,6 +6,13 @@
       "title": "Need For Speed",
       "type": "Racing",
       "rating": 7.2
+    },
+    {
+      "id": 1,
+      "img": "/game-dashboard/static/media/bgOne.5729a4ebfe88a483df8f.png",
+      "title": "Sniper 2",
+      "type": "Battle/war",
+      "rating": 9.9
     }
   ]
 }
