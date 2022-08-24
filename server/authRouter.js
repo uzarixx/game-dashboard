@@ -10,6 +10,7 @@ router.post('/registration', [
     check('password', "Pass min lenght 4 max lenght 10 words").isLength({min: 4, max: 30})
 ], controller.registration)
 router.post('/login', controller.login)
-router.get('/users', authMiddleware,roleMiddleware(['ADMIN']), controller.getUsers)
+router.get('/users', roleMiddleware(['ADMIN']), controller.getUsers)
+router.get('/me', authMiddleware, controller.getMe)
 
 module.exports = router

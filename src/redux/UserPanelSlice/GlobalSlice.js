@@ -5,7 +5,9 @@ const initialState = {
     popupOpen: false,
     gameList: [],
     theme: 'light',
-    userAuth: false
+    userAuth: false,
+    isAdmin: false,
+    userName: ''
 }
 
 export const counterSlice = createSlice({
@@ -26,14 +28,22 @@ export const counterSlice = createSlice({
         },
         setUserAuth: (state, action) => {
             state.userAuth = action.payload
+        },
+        setIsAdmin: (state, action) => {
+            state.isAdmin = action.payload
+        },
+        setUserName: (state, action) => {
+            state.userName = action.payload
         }
     }
 })
 
-export const {setPanelOpen, setGameList, setTheme, setUserAuth, setPopupOpen} = counterSlice.actions
+export const {setPanelOpen, setGameList, setTheme, setUserAuth, setPopupOpen, setIsAdmin, setUserName} = counterSlice.actions
 
 
 export const selectUserPanel = (state) => state.counterSlice.panelOpen
+export const selectIsAdmin = (state) => state.counterSlice.isAdmin
+export const selectUserName = (state) => state.counterSlice.userName
 export const selectPopupPanel = (state) => state.counterSlice.popupOpen
 export const selectTheme = (state) => state.counterSlice.theme
 export const selectUserAuth = (state) => state.counterSlice.userAuth

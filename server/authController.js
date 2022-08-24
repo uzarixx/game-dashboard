@@ -5,9 +5,11 @@ const jwt = require('jsonwebtoken')
 const {validationResult} = require('express-validator')
 const {secret} = require('./config')
 
-const generateAccessToken = (id, roles) => {
+
+const generateAccessToken = (id, roles, username) => {
     const payload = {
         id,
+        username,
         roles
     }
     return jwt.sign(payload, secret, {expiresIn: "24h"})
@@ -48,11 +50,19 @@ class authController {
             if (!validPassword) {
                 return res.status(400).json({message: "Wrong password"})
             }
-            const token = generateAccessToken(user._id, user.roles)
+            const token = generateAccessToken(user._id, user.roles, user.username)
             return res.json({token, username})
         } catch (e) {
             console.log(e)
             res.status(400).json({message: "Login error"})
+        }
+    }
+
+    async getMe(req, res) {
+        try {
+            res.json({...req.user})
+        } catch (e) {
+            console.log(e)
         }
     }
 

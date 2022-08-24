@@ -6,17 +6,36 @@ import Main from "./components/Semantic/Main";
 import Navigation from "./components/Semantic/Navigation";
 import UserPanel from "./components/Panels/UserPanel";
 import {useDispatch} from "react-redux";
-import {setGameList} from "./redux/UserPanelSlice/GlobalSlice";
+import {setGameList, setIsAdmin, setUserName} from "./redux/UserPanelSlice/GlobalSlice";
 import {array} from 'imports/arrayImports'
 import AuthorizationPopup from "./components/Popups/AuthorizationPopup";
-
+import AuthService from "./services/AuthService";
 
 
 function App() {
     const list = array
     const dispatch = useDispatch();
-    React.useEffect(()=> {
+
+    React.useEffect(() => {
         dispatch(setGameList(list))
+    }, [])
+
+    React.useEffect(() => {
+        const user = async () => {
+            try {
+                const {data} = await AuthService.getMe()
+                console.log(data)
+                const isAdmin = data.roles
+                const userName = data.username
+                dispatch(setUserName(userName))
+                if (String(isAdmin) === "ADMIN") {
+                    return dispatch(setIsAdmin(true))
+                }
+            } catch (e) {
+                console.log(e)
+            }
+        }
+        user()
     }, [])
 
     return (

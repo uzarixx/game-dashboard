@@ -1,7 +1,13 @@
 import React, {useCallback} from "react";
 import styles from 'styles/components/Panels/UserPanel.module.scss'
 import {useDispatch, useSelector} from "react-redux";
-import {setPanelOpen, selectUserAuth, selectUserPanel, setPopupOpen} from "redux/UserPanelSlice/GlobalSlice";
+import {
+    setPanelOpen,
+    selectUserAuth,
+    selectUserPanel,
+    setPopupOpen,
+    selectUserName
+} from "redux/UserPanelSlice/GlobalSlice";
 import UserImg from 'assets/png/user-img.png'
 import {ReactComponent as Notification} from "assets/svg/bell.svg";
 import {ReactComponent as User} from "assets/svg/user.svg";
@@ -24,6 +30,7 @@ function UserPanel() {
     const dispatch = useDispatch()
     const panel = useSelector(selectUserPanel)
     const isAuth = useSelector(selectUserAuth)
+    const username = useSelector(selectUserName)
     const [notificationPanel, setNotificationPanel] = React.useState(false)
     const [notificationStatus, setNotificationStatus] = React.useState(false)
     const onClickNotification = useCallback(() => {
@@ -43,12 +50,10 @@ function UserPanel() {
             setNotificationStatus(true)
         }
     }, [])
-    const username = localStorage.getItem('username')
     return (
         <div className={`${styles.wrapperPanel}${panel ? ' ' + styles.wrapperPanelActive : ''}`}
              onClick={onClickBodyPanel}
              style={notificationPanel ? {cursor: "pointer"} : {cursor: "default"}}>
-
             {
                 isAuth ? <div className={styles.panelHead}>
                     <div className={styles.userInfo}>

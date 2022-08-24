@@ -1,3 +1,11 @@
 {
-  "favorites": []
+  "favorites": [
+    {
+      "id": 2,
+      "img": "/game-dashboard/static/media/bgTwo.aee00b66d3da0f92c988.png",
+      "title": "Need For Speed",
+      "type": "Racing",
+      "rating": 7.2
+    }
+  ]
 }

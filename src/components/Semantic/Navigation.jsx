@@ -15,10 +15,8 @@ import {
     setPanelOpen,
     setTheme,
     selectUserAuth,
-    setUserAuth, setPopupOpen
+    setUserAuth, setPopupOpen, setUserName
 } from "redux/UserPanelSlice/GlobalSlice";
-
-
 
 
 const icons = [
@@ -41,6 +39,8 @@ function Navigation() {
     const onSetAuth = () => {
         dispatch(setUserAuth(false))
         localStorage.removeItem('token');
+        dispatch(setUserName(''))
+        location.reload()
     }
     const onSetAuthPanel = () => {
         dispatch(setPopupOpen(true))
@@ -80,10 +80,9 @@ function Navigation() {
     }, [theme])
 
 
-
     return (
         <nav onClick={onClosePanel}>
-            <div className={styles.wrapper} >
+            <div className={styles.wrapper}>
                 <div className={styles.button} onClick={onSetPanel}>
                     <span></span>
                     <span></span>

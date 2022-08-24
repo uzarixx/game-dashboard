@@ -1,3 +1,26 @@
+.authorizedMessage {
+  cursor: default;
+  position: absolute;
+transform: translate(-50%);
+  left: 50%;
+  top: -50%;
+  transition: .7s;
+  padding: 10px 20px 20px 20px;
+  background: var(--text-default);
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  color: var(--text-reverse-default);
+  box-shadow: 0 2px 8px rgba(183, 183, 183, 0.4);
+}
+
+.authorizedMessageActive {
+  top: 0;
+  left: 50%;
+  transition: .7s;
+  color: var(--text-reverse-default);
+}
+
+
 .authBody {
   width: 100%;
   height: 100%;
@@ -55,6 +78,7 @@
     .authError {
       display: none;
     }
+
     .activeError {
       text-align: center;
       display: flex;

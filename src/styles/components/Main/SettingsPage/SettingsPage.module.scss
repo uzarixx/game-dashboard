@@ -1,3 +1,4 @@
+
 .settingsPageWrapper {
   .themeButton {
     width: 60px;
@@ -19,6 +20,19 @@
 
       fill: white;
       stroke: white;
+    }
+  }
+
+}
+.allUsersWrapper {
+  margin-top: 20px;
+  ul {
+    margin-top: 20px;
+    li {
+      max-width: 300px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid var(--text-default);
+      padding-bottom: 5px;
     }
   }
 }
